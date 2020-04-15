@@ -1,0 +1,22 @@
+
+{% extends "body/index.html" %}
+{% block content %}
+
+  {% for post in posts %}
+  <main class="padding:20px 20px 20px 20px">
+      <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <h2><a class="article-title"style="padding:20px 20px 20px 20px" href="#">{{ post.title }}</a></h2>
+
+
+
+
+          </div>
+
+          <p class="article-content">{{ post.content }}</p>
+        </div>
+      </article>
+      </main>
+  {% endfor %}
+{% endblock content %}

@@ -1,0 +1,173 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="{% static 'body/main.css' %}">
+<style>
+      p.monospace {
+        font-family:  Arial;
+        color: #0000000;
+        border-style: solid;
+
+                  }
+
+      img.img-fluid {
+              width: 100%;
+              height: 450px;
+               border-radius: 15px;
+
+                    }
+        main.banana{
+          background-image: url('/media/pictures/background1.jpg');
+
+
+        }
+      div.apple{
+          padding: 25px 25px 25px 50px;
+      }
+      div.banana{
+          padding: 25px 25px 25px 50px;
+
+      }
+
+
+
+
+</style>
+
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md py-3 navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <!-- Just an image -->
+
+
+
+          <a class="navbar-brand mr-4" href="#">
+            <img src="/media/pictures/Toastmasters Transparent.png" width="40" height="30" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+
+              <a class="nav-item nav-link" href="{%url 'body-index'%}">Home</a>
+              <a class="nav-item nav-link" href=#C4>About</a>
+              <a class="nav-item nav-link" href="{% url 'body-events' %}">Articles</a>
+                <a class="nav-item nav-link" href="#">Gallery</a>
+              <a class="nav-item nav-link" href="#">Events</a>
+                <a class="nav-item nav-link" href="{% url 'body-team' %}">Club Officers</a>
+              <a class="nav-item nav-link" href="{% url 'contact' %}">Contact Us</a>
+            </div>
+
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+
+{% block content %}
+
+<main class="banana">
+
+    <div class="apple">
+      <img src="/media/pictures/img8.jpg" class="img-fluid" alt="Responsive image" height="400px">
+      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
+      <img src="/media/pictures/img6.jpg" class="img-fluid" alt="Responsive image">
+      <img src="/media/pictures/img5.jpg" class="img-fluid" alt="Responsive image">
+    </div >
+    <div class="apple">
+      <h1 id="C4">About Us!</h1>
+      <p class="monospace">
+
+          BITS Toastmasters Club is the public speaking and leadership club of BITS-Pilani, Pilani Campus. Our primary aim is
+    to help Bitsians develop self-confidence and leadership potential. This club wants to provide a supportive and positive
+    learning experience in which members are empowered to develop communication and leadership skills, resulting in
+    greater self-confidence and personal growth. It also focus on providing every member with certified courses on
+    Leadership and Public Speaking which are initiated by the Toastmasters franchise itself.
+
+
+
+
+      </p>
+        <h1 >Our Objectives!</h1>
+        <p class="monospace">
+          The fundamental objective of this club would be to educate students through the process of self – improvement and
+      leadership training so that they may increase their confidence and usefulness in professional and community life.
+      The club seeks to:<br>
+      • Help its individual members improve their abilities to communicate effectively<br>
+      • Provide for its individual members’ instructions, educational materials and opportunities which will give them skill<br>
+      and experience in the preparation and delivery of speeches<br>
+      • Encourage its individual members to read and to listen analytically<br>
+      • Provide for its individual members’ fair and constructive evaluation of their efforts toward self-improvement<br>
+      • Increase its individual members’ knowledge of the rules of parliamentary procedure and their skills in conducting
+      meetings and participating in group discussions<br>
+      • Afford leadership training for its individual members<br>
+      • Provide opportunities and encouragement for its individual members to appear before audiences and to express
+      their thoughts creditably<br>
+      • Help in preparing people for real life challenges, improvisation and confident speaking – all of which are “must
+      have qualities” for an interview<br>
+      • Conduct Online sessions on courses such as<br>
+
+       &nbsp;• Dynamic Leadership<br>
+       &nbsp;• Effective Coaching,<br>
+       &nbsp;• Innovative Planning,<br>
+       &nbsp;• Leadership development,<br>
+       &nbsp;• Motivational strategies,<br>
+       &nbsp;• Persuasive Influence,<br>
+       &nbsp;• Presentation Mastery<br>
+       &nbsp;• Strategic Relationships<br>
+
+
+       &nbsp;• Team Collaboration<br>
+       &nbsp;• Visionary Communication.<br>
+
+
+
+
+
+
+
+        </p>
+
+
+
+
+    </div>
+  </main>
+
+
+
+    <script>
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("img-fluid");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+
+</script>
+{% endblock content %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+  </body>
+</html>
