@@ -1,57 +1,133 @@
-{% extends "body/index.html" %}
-{% block content %}
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+    <style type ="text/css">
+      *{
+        box-sizing : border-box;
+      }
+      .gallery{
+        border : 1px solid #ccc;
 
+      }
+      .gallery img{
+        width:100%
+        height:auto;
+      }
+      .responsive{
+        padding : 0 6px;
+        float:left;
+        width:25%;
+      }
+      @media only screen and (max-width: 700px){
+        .responsive{
+          width:50%;
+          margin:6px 0;
+        }
+      }
+        @media only screen and (max-width: 500px){
+          .responsive{
+            width:100%;
+            margin:6px 0;
+          }
+        }
 
-.row{
-  grid-gap:50px;
-}
-.container{
-  grid-gap:100px;
-}
-}
-</style>
-<main class="banana">
-  <div class="container">
-    <div class="row"style="padding:50px;">
+    </style>
+  </head>
+  <body>
+    <h1>Image Gallery</h1>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
 
+      </div>
 
-        <div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-</div>
-        <div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-</div>
-        <div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-
-</div>
-<div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-
-</div>
     </div>
-    <div class="row"style="padding:0px 50px 50px 50px";>
-        <div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-</div>
-        <div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-</div>
-        <div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-</div>
-<div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
 
-</div>
-    </div>
-    <div class="row" style="padding:0px 50px 50px 50px";>
-        <div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-</div>
-        <div class="col-md-4">
-</div>
-        <div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
-</div>
-<div class="col-md-4">      <img src="/media/pictures/img7.jpg" class="img-fluid" alt="Responsive image">
+      </div>
 
-</div>
     </div>
-  </div>
-</main>
-{%endblock content%}
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+    <div class="responsive">
+      <div class="gallery">
+        <a href="" target="_blank"><<img src="/media/pictures/img8.jpg" width="300"height="200"></a>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
