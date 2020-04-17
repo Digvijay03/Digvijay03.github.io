@@ -7,6 +7,7 @@ urlpatterns = [
     path('events/',views.events,name='body-events'),
     path('contact/',views.contact,name='contact'),
     path('gallery/',views.gallery,name='gallery'),
+    path('home/'),views.home,name='home'),
 
 
     ]

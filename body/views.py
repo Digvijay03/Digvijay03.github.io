@@ -8,6 +8,8 @@ def base(request):
 
 def index(request):
     return render(request,'body/index.html')
+def home(request):
+    return render(request,'body/home.html')
 
 
 
