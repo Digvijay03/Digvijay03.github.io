@@ -19,14 +19,16 @@ ul {
 
 .site-header .navbar-nav .nav-link {
   color: #cbd5db;
+  font-weight: 800;
 }
 
 .site-header .navbar-nav .nav-link:hover {
   color: #ffffff;
+  font-weight: 800;
 }
 
 .site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
+  font-weight: 800;
 }
 
 .content-section {
