@@ -20,3 +20,5 @@ def events(request):
     return render(request,'body/events.html',context)
 def contact(request):
     return render(request,'body/contact.html')
+def gallery(request):
+    return render(request,'body/gallery.html')
