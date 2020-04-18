@@ -16,10 +16,8 @@ def home(request):
 def team(request):
     return render(request,'body/team.html')
 def events(request):
-    context = {
-    'posts':Post.objects.all()
-    }
-    return render(request,'body/events.html',context)
+
+    return render(request,'body/events.html')
 def contact(request):
     return render(request,'body/contact.html')
 def gallery(request):
