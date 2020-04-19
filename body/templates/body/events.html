@@ -1,89 +1,161 @@
+{%extends 'body/index.html'%}
+{%block content%}
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-   <style type="text/css">
-    .container{
-      display: flex;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Layered Card Hover</title>
+  <style >
+  body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    background: #212121;
+    font-family: sans-serif;
+  }
+  .box{
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin: 0 auto;
+  }
+  .card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+  }
+  .card:before,
+  .card:after
+  {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.5s;
+    z-index:-1;
+  }
+  .card:hover:before{
+  transform: rotate(20deg);
+  box-shadow: 0 2px 20px rgba(0,0,0,.2);
+  }
+  .card:hover:after{
+  transform: rotate(10deg);
+  box-shadow: 0 2px 20px rgba(0,0,0,.2);
+  }
+  .card .imgBx{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: #222;
+  transition: 0.5s;
+  z-index: 1;
+  }
+
+  .card:hover .imgBx
+  {
+    bottom: 80px;
+  }
+
+  .card .imgBx img{
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 4% 2%;
-      box-sizing: border-box;
-      height: 50vh;
-    }
-    .container .box{
-      flex: 1;
-      overflow: hidden;
-      transition: 0.5s all;
-      margin: 0 2%;
-      box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-      line-height: 0;
-    }
-    .container .box > img {
-      width: 200%;
-      height: calc(40% - 10vh);
+      height: 100%;
       object-fit: cover;
-      transition: 0.5s all;
-    }
-      .container .box > span{
-        display: block;
-        text-align: center;
-        height: 10vh;
-        line-height: 2.6;
-        font-size: 3.8vh;
-      }
-      .container .box:hover{
-        flex: 1 1 50%;
-      }
-      .container .box:hover img{
-        width: 100%;
-        height:100%;
-      }
-      .container{
-        padding : 0 6px;
-        float:left;
-        width:25%;
-      }
-      @media only screen and (max-width: 700px){
-        .container{
-          width:50%;
-          margin:6px 0;
-        }
-      }
-      @media only screen and (max-width: 500px){
-        .container{
-          width:100%;
-          margin:6px 0;
-        }
-      }
+  }
 
+  .card .details{
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      height: 60px;
+      text-align: center;
+  }
 
+  .card .details h2{
+   margin: 0;
+   padding: 0;
+   font-weight: 600;
+   font-size: 20px;
+   color: #777;
+   text-transform: uppercase;
+  }
 
-   </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class ="box">
-        <img src="/media/pictures/e1.jpeg">
-        <span> css </span>
+  .card .details h2 span{
+  font-weight: 500;
+  font-size: 16px;
+  color: #f38695;
+  display: block;
+  margin-top: 5px;
+   }
+
+  </style>
+</head>
+<body>
+  <div class="box">
+      <div class="card">
+        <div class="imgBx">
+          <img src="/media/pictures/e1.jpeg">
+        </div>
+        <div class="details">
+            <h2>Toast<br><span>Talks</span></h2>
+        </div>
       </div>
 
-      <div class ="box">
-        <img src="/media/pictures/e2.jpeg">
-        <span> css </span>
-      </div>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e2.jpeg">
+         </div>
+         <div class="details">
+            <h2>SomeOne Famous<br><span>Producer</span></h2>
+          </div>
+       </div>
 
-      <div class ="box">
-        <img src="/media/pictures/e3.jpeg">
-        <span> css </span>
-      </div>
+       <div class="card">
+         <div class="imgBx">  <img src="/media/pictures/e3.jpeg">
+         </div>
+         <div class="details">
+            <h2><br><span></span></h2>
+          </div>
+       </div>
 
-      <div class ="box">
-        <img src="/media/pictures/e4.jpeg">
-        <span> css </span>
-      </div>
-    </div>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e4.jpeg">
+         </div>
+         <div class="details">
+            <h2>Area H2<br><span>Contest</span></h2>
+          </div>
+       </div>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e5.jpeg">
+         </div>
+         <div class="details">
+            <h2> 1 year<br><span>complete!!</span></h2>
+          </div>
+       </div>
 
-
-  </body>
+  </div>
+</body>
 </html>
+{% endblock content%}
