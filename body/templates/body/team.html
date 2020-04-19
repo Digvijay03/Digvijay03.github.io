@@ -1,239 +1,185 @@
 {% extends "body/index.html" %}
 {% block content %}
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <title>Layered Card Hover</title>
+  <style >
+  body{
+    margin-top: 6rem;
+    padding: 0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    background: #212121;
+    font-family: sans-serif;
+  }
+  .box{
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin: 0 auto;
+  }
+  .card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+  }
+  .card:before,
+  .card:after
+  {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.5s;
+    z-index:-1;
+  }
+  .card:hover:before{
+  transform: rotate(20deg);
+  box-shadow: 0 2px 20px rgba(0,0,0,.2);
+  }
+  .card:hover:after{
+  transform: rotate(10deg);
+  box-shadow: 0 2px 20px rgba(0,0,0,.2);
+  }
+  .card .imgBx{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: #222;
+  transition: 0.5s;
+  z-index: 1;
+  }
 
-    <title>Club Officers</title>
+  .card:hover .imgBx
+  {
+    bottom: 80px;
+  }
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  .card .imgBx img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
 
-    <style >
-      body{
-        background-color:#ffff00; 
-      }
-      .header h1{
-        color: #4e03e1;
-        text-transform: uppercase;
-        margin-top: 4rem;
-      }
-      header span {
-         width :100px;
-         height:5px;
-         background-color : #4e03e1;
-         display : block;
-         text-align : center;
-         margin : 15px auto;
-      }
-      .box{
-        position:relative;
-        overflow:hidden;
-        font-family:'lato',sans-serif;
-        text-align:center;
-      }
-      .box:before{
-         content:'';
-         position:absolute;
-         background:linear-gradient(to right,#8e2de2,#4a00e0);
-         width:100%;
-         height:100%;
-         top:0;
-         left:0;
-         opacity:0;
-         transition: all 0.4s linear;
-      }
-      .box:hover:before{
-        opacity:1;
-      }
-      .box img{
-        width: 100%;
-        height: auto;
-        transition:all 0.4s linear;
-      }
-      .box:hover img{
-        opacity:0;
-        transform: scale(3);
-      }
-      .box .box-content{
-        color:#fff;
-        width:100%;
-        transform:translateY(-50%) scale(0);
-        position:absolute;
-        top : 50%;
-        left:0;
-        transition: all 0.4s linear;
+  .card .details{
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      height: 60px;
+      text-align: center;
+  }
 
-      }
-      .box:hover .box-content{
-        transform: translateY(-50%) scale(1);
+  .card .details h2{
+   margin: 0;
+   padding: 0;
+   font-weight: 600;
+   font-size: 20px;
+   color: #777;
+   text-transform: uppercase;
+  }
 
-      }
-       .box .box-content .title{
-         font-size: 25px;
-         font-weight:600;
-         letter-spacing: 1px;
-         text-transform: uppercase;
-         margin: 0;
-       }
-       .box .box-content .post{
-         font-size:16px;
-         text-transform: capitalise;
-       }
-    </style>
+  .card .details h2 span{
+  font-weight: 500;
+  font-size: 16px;
+  color: #f38695;
+  display: block;
+  margin-top: 5px;
+   }
 
-    </head>
- <body>
-   <header class="text-center py-5">
-     <div class="container">
-       <h1  class="font-weight-light"></h1>
-       </div>
-       </header>
-       <div class="container">
-         <div class="row">
-           <div class="colo-md-3 col-sm-6 my-3">
-             <div class="box">
-               <img src="/media/pictures/img6.jpg" alt="">
-               <div class="box-content">
-                 <h3>willi</h3>
-                 <span class="post">pres</span>
-
-
-
-               </div>
-
-
-
-           </div>
-
-
-         </div>
-         <div class="colo-md-3 col-sm-6 my-3">
-           <div class="box">
-             <img src="/media/pictures/img6.jpg" alt="">
-             <div class="box-content">
-               <h3>willi</h3>
-               <span class="post">pres</span>
-
-
-
-             </div>
-
-
-
-         </div>
-
-
-       </div>
-       <div class="colo-md-3 col-sm-6 my-3">
-         <div class="box">
-           <img src="/media/pictures/img6.jpg" alt="">
-           <div class="box-content">
-             <h3>willi</h3>
-             <span class="post">pres</span>
-
-
-
-           </div>
-
-
-
-       </div>
-
-
-     </div>
-     <div class="colo-md-3 col-sm-6 my-3">
-       <div class="box">
-         <img src="/media/pictures/img6.jpg" alt="">
-         <div class="box-content">
-           <h3>willi</h3>
-           <span class="post">pres</span>
-
-
-
-         </div>
-
-
-
-     </div>
-
-
-   </div>
-   <div class="colo-md-3 col-sm-6 my-3">
-     <div class="box">
-       <img src="/media/pictures/img6.jpg" alt="">
-       <div class="box-content">
-         <h3>willi</h3>
-         <span class="post">pres</span>
-
-
-
-       </div>
-
-
-
-   </div>
-
-
- </div>
- <div class="colo-md-3 col-sm-6 my-3">
-   <div class="box">
-     <img src="/media/pictures/img6.jpg" alt="">
-     <div class="box-content">
-       <h3>willi</h3>
-       <span class="post">pres</span>
-
-
-
-     </div>
-
-
-
- </div>
-
-
-</div>
-<div class="colo-md-3 col-sm-6 my-3">
+  </style>
+</head>
+<body>
   <div class="box">
-    <img src="/media/pictures/img6.jpg" alt="">
-    <div class="box-content">
-      <h3>willi</h3>
-      <span class="post">pres</span>
+      <div class="card">
+        <div class="imgBx">
+          <img src="/media/pictures/e1.jpeg">
+        </div>
+        <div class="details">
+            <h2>Raghav Raman Garg<br><span>President</span></h2>
+        </div>
+      </div>
 
-
-
-    </div>
-
-
-
-</div>
-
-
-</div>
-<div class="colo-md-3 col-sm-6 my-3">
-  <div class="box">
-    <img src="/media/pictures/img6.jpg" alt="">
-    <div class="box-content">
-      <h3>willi</h3>
-      <span class="post">pres</span>
-
-
-
-    </div>
-
-
-
-</div>
-
-
-</div>
-
-
-       </div>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e1.jpeg">
+         </div>
+         <div class="details">
+            <h2>Devansh Jain<br><span>VP Education</span></h2>
+          </div>
        </div>
 
+       <div class="card">
+         <div class="imgBx">  <img src="/media/pictures/e1.jpeg">
+         </div>
+         <div class="details">
+            <h2>Navleen Kaur<br><span> VP Membership</span></h2>
+          </div>
+       </div>
 
-  </body>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e1.jpeg">
+         </div>
+         <div class="details">
+            <h2>Harsh Sulakhe<br><span>VP Public Relations</span></h2>
+          </div>
+       </div>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e1.jpeg">
+         </div>
+         <div class="details">
+            <h2> Shrey Agarwal<br><span>Secretary</span></h2>
+          </div>
+       </div>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e1.jpeg">
+         </div>
+         <div class="details">
+            <h2>Gauransh Sawhney<br><span>Treasurer</span></h2>
+          </div>
+       </div>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e1.jpeg">
+         </div>
+         <div class="details">
+            <h2>Harsh Jhunjhunwala<br><span>Sergeant at Arms</span></h2>
+          </div>
+       </div>
+       <div class="card">
+         <div class="imgBx">
+          <img src="/media/pictures/e1.jpeg">
+         </div>
+         <div class="details">
+            <h2>Digvijay Singh<br><span>Design Head</span></h2>
+          </div>
+       </div>
+
+  </div>
+</body>
 </html>
-{%endblock content%}
+{% endblock content%}
