@@ -16,7 +16,7 @@
 
      }
      .thumb{
-       width: 400px;
+       width: 350px;
        height: 300px;
        margin: 150px auto;
        perspective: 1000px;
@@ -30,10 +30,12 @@
        background-size: 0, cover;
        transform-style: preserve-3d;
        transition: all 0.5s;
+        border:15px;
      }
      .thumb:hover a{
        transform: rotateX(80deg);
        transform-origin: bottom;
+        border:15px;
      }
      .thumb a:after{
        content: '';
@@ -47,6 +49,7 @@
        background-position: bottom;
        transform: rotateX(90deg);
        transform-origin: bottom;
+        border:15px;
 
      }
      .thumb a span{
@@ -61,6 +64,7 @@
        transform: rotateX(-89.99deg);
        transform-origin: top;
        z-index: 1;
+         border:15px;
 
      }
      .thumb a:before{
@@ -76,11 +80,13 @@
        opacity: 0.15;
        transform : rotateX(95deg) translateZ(-80px) scale(0.75);
        transform-origin:bottom;
+        border:15px;
      }
      .thumb:hover a:before{
        opacity: 1;
        box-shadow:0 0 25px 25px rgba(0,0,0,0.5);
        transform: rotateX(0) translateZ(-60px) scale(0.85);
+        border:15px;
      }
      div.apple{
          padding: 60px 25px 25px 50px;
