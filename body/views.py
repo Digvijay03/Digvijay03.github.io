@@ -22,5 +22,3 @@ def contact(request):
     return render(request,'body/contact.html')
 def gallery(request):
     return render(request,'body/gallery.html')
-def articles(request):
-    return render(request,'body/articles.html')
