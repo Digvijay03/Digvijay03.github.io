@@ -26,7 +26,7 @@ SECRET_KEY = '!^gej8)#db6tgnmo#sotlgzktsl!7ci^3t+c5iuhi39p1hnp^l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['toastmastersbitspilani.herokuapp.com']
+ALLOWED_HOSTS = ['toastmastersbitspilani.herokuapp.com','toastmastersbitspilani.com']
 
 
 # Application definition
